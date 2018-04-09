@@ -1,0 +1,43 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor 借阅者
+actor 图书管理员
+rectangle 图书借还 {
+
+   图书管理员-->(借出图书)
+   图书管理员<--(归还图书)
+   (借出图书) --> 借阅者
+   (归还图书) <-- 借阅者
+
+}
+
+newpage
+
+left to right direction
+skinparam packageStyle rectangle
+actor 借阅者
+actor 图书管理员
+rectangle 图书预约续借 {
+
+   图书管理员-->(预约图书)
+   图书管理员-->(续借图书)
+   (预约图书) --> 借阅者
+   (续借图书) --> 借阅者
+
+}
+
+newpage
+
+left to right direction
+skinparam packageStyle rectangle
+actor 系统管理员
+rectangle 系统管理 {
+
+    系统管理员-->(管理标题)
+    系统管理员-->(管理书目)
+    系统管理员-->(管理借书)
+
+}
+
+@enduml
